@@ -3,7 +3,114 @@
     <head>
         <title>DELI-VERY</title>
     </head>
+
     <body>
-        <h1>Hello World!!!</h1>
+      <main>
+        <h1>MayMay's Burgers</h1>
+        <p >We deliver quick and easy</p>
+      </main>
+
+      <section>
+        <h2>Select Burger</h2>
+        <p >Choose among our Burgers!</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Förrättsburgaren</th>
+              <th>Huvudrättsburgaren</th>
+              <th>Efterrättsburgaren</th>
+            </tr>
+          </thead>
+
+          <thead>
+            <tr>
+              <th><img src="https://image.shutterstock.com/image-photo/burgers-on-black-buns-homemade-260nw-1403341763.jpg" width="200"></th>
+              <th><img src="https://hankstruebbq.se/wp-content/uploads/2019/06/Smash_burgers.jpg" width="200"></th>
+              <th><img src="https://data.thefeedfeed.com/recommended/post_2152361.jpeg" width="200"></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+                <td>
+                  <ul>
+                    <li>Sallad</li>
+                    <li>Tomat</li>
+                    <li>Skinka</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    <li>Avokado</li>
+                    <li>Oxkött</li>
+                    <li>Chillisås</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    <li>Jordgupppsbiff</li>
+                    <li>Chokladsås</li>
+                    <li>Glass</li>
+                  </ul>
+                </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>Customer information</h2>
+        <p >Give us your details so we can deliver!</p>
+
+        <p>
+          <label for="name">Full name</label><br>
+          <input type="text" id="name" name="fn" required="required" placeholder="First- and Last name">
+        </p>
+
+        <p>
+          <label for="email">E-mail</label><br>
+          <input type="email" id="email" name="em" required="required" placeholder="E-mail address">
+        </p>
+
+        <p>
+          <label for="street">Street</label><br>
+          <input type="text" id="street" name="fn" required="required" placeholder="Street name">
+        </p>
+
+        <p>
+          <label for="housenumber">House number</label><br>
+          <input type="number" id="housenumber" name="fn" required="required" placeholder="House number">
+        </p>
+
+        <p>
+          <label for="pay">Payment</label><br>
+          <select id="pay" name="rcp">
+            <!--If you wish to provide the users with pre-selected values,
+            simply add the selected="selected" attribute to the option
+            element you wish to be pre-selected. -->
+            <option selected>Swish </option>
+            <option>Bankkort</option>
+            <option>Faktura</option>
+            <option>Delbetalning</option>
+          </select>
+        </p>
+
+        <p>
+          <label for="Female">Female</label<br>
+          <input type="radio" id="Female" name="gender" value="Female" checked="checked">
+          <label for="Male">Male</label<br>
+          <input type="radio" id="Male" name="gender" value="Male">
+
+        </p>
+      </section>
+
+      <button type="submit"><img src="https://cdn3.iconfinder.com/data/icons/bbq-grilling-and-tail-gating/50/48-512.png" width="50">Send your order</button>
+
+
+        <hr>
+        <footer>
+          &copy; MayMay's Burgers
+        </footer>
     </body>
 </html>
