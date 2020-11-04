@@ -1,65 +1,61 @@
 <!DOCTYPE html>
+
 <html lang="en">
     <head>
+      <!-- <link rel="stylesheet" type ="text/css" href="css/reset.css"> -->
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+
         <title>DELI-VERY</title>
     </head>
 
     <body>
-      <main>
+      <main id = "head">
+        <img id ="headpic" src="https://cdn.vox-cdn.com/thumbor/z-FzHlJbOVw1hhVXqkbdt39Af2I=/0x0:1500x752/1200x800/filters:focal(630x256:870x496)/cdn.vox-cdn.com/uploads/chorus_image/image/66079684/image_asset.0.jpeg">
         <h1>MayMay's Burgers</h1>
-        <p >We deliver quick and easy</p>
+        <p>We deliver quick and easy</p>
       </main>
 
-      <section>
+      <section class="burgare" id ="b">
         <h2>Select Burger</h2>
         <p >Choose among our Burgers!</p>
 
-        <table>
-          <thead>
-            <tr>
-              <th>Förrättsburgaren</th>
-              <th>Huvudrättsburgaren</th>
-              <th>Efterrättsburgaren</th>
-            </tr>
-          </thead>
+        <div class="wrapper">
+           <div class="box a">
+             <h3> Förrättsburgaren</h3>
+             <img src="https://image.shutterstock.com/image-photo/burgers-on-black-buns-homemade-260nw-1403341763.jpg" width="200">
+             <ul>
+               <li>Sallad</li>
+               <li><span id="allergi">Tomat</li>
+               <li>Skinka</li>
+             </ul>
 
-          <thead>
-            <tr>
-              <th><img src="https://image.shutterstock.com/image-photo/burgers-on-black-buns-homemade-260nw-1403341763.jpg" width="200"></th>
-              <th><img src="https://hankstruebbq.se/wp-content/uploads/2019/06/Smash_burgers.jpg" width="200"></th>
-              <th><img src="https://data.thefeedfeed.com/recommended/post_2152361.jpeg" width="200"></th>
-            </tr>
-          </thead>
+           </div>
 
-          <tbody>
-            <tr>
-                <td>
-                  <ul>
-                    <li>Sallad</li>
-                    <li>Tomat</li>
-                    <li>Skinka</li>
-                  </ul>
-                </td>
-                <td>
-                  <ul>
-                    <li>Avokado</li>
-                    <li>Oxkött</li>
-                    <li>Chillisås</li>
-                  </ul>
-                </td>
-                <td>
-                  <ul>
-                    <li>Jordgupppsbiff</li>
-                    <li>Chokladsås</li>
-                    <li>Glass</li>
-                  </ul>
-                </td>
-            </tr>
-          </tbody>
-        </table>
+           <div class="box b">
+             <h3> Huvudrättsburgaren</h3>
+             <img src="https://hankstruebbq.se/wp-content/uploads/2019/06/Smash_burgers.jpg" width="200">
+             <ul>
+               <li>Avokado</li>
+               <li>Oxkött</li>
+               <li>Chillisås</li>
+             </ul>
+           </div>
+
+           <div class="box c">
+             <h3> Efterrättsburgaren</h3>
+             <img src="https://data.thefeedfeed.com/recommended/post_2152361.jpeg" width="200">
+             <ul>
+               <li>Jordgupppsbiff</li>
+               <li>Chokladsås</li>
+               <li>Glass</li>
+             </ul>
+           </div>
+
+         </div>
       </section>
 
-      <section>
+
+      <section class="info" id="i">
         <h2>Customer information</h2>
         <p >Give us your details so we can deliver!</p>
 
