@@ -2,32 +2,159 @@
 
 <html lang="en">
     <head>
+      <!-- THE html.map -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="css/deli-very.css">
+      <script src="/vue/vue.js" defer></script>
+      <script src="/socket.io/socket.io.js" defer></script>
+
+
       <!-- <link rel="stylesheet" type ="text/css" href="css/reset.css"> -->
       <link rel="stylesheet" type="text/css" href="css/style.css">
+      <script src="js/menu.js" ></script>
+      <script src="js/js_script.js" defer></script>
+      <script src="js/vue_script.js" defer></script>
+      <script src="https://vuejs.org/js/vue.js"></script>
 
-        <title>DELI-VERY</title>
+      <title>MayMay's Burgers</title>
     </head>
 
-    <body>
-      <main id = "head">
-        <img id ="headpic" src="https://cdn.vox-cdn.com/thumbor/z-FzHlJbOVw1hhVXqkbdt39Af2I=/0x0:1500x752/1200x800/filters:focal(630x256:870x496)/cdn.vox-cdn.com/uploads/chorus_image/image/66079684/image_asset.0.jpeg">
-        <h1>MayMay's Burgers</h1>
-        <p>We deliver quick and easy</p>
-      </main>
+<body>
+  <header id = "head">
+    <img id ="headpic" src="https://cdn.vox-cdn.com/thumbor/z-FzHlJbOVw1hhVXqkbdt39Af2I=/0x0:1500x752/1200x800/filters:focal(630x256:870x496)/cdn.vox-cdn.com/uploads/chorus_image/image/66079684/image_asset.0.jpeg">
+    <h1>MayMay's Burgers</h1>
+    <p>We deliver quick and easy</p>
+  </header>
+
+<!-- THE GENERATION OF THE BURGER MENU -->
+<main id="myProj">
+  <section class="burgerMenu" id = "b">
+    <div class="wrapper" id="myBurgers">
+       <div v-for = "burger in burgers" class="box">
+         <h3> {{burger.name}} </h3>
+         <img v-bind:src="burger.img">
+         <ul>
+           <li> {{burger.kCal}} kCal </li>
+           <li v-if = "burger.lactose"> Contains lactose </li>
+           <li v-if = "burger.gluten"> Contains gluten </li>
+         </ul>
+         <div>
+         <label for="selected" id="selectButton" >Select this burger </label>
+         <input v-model = "Ordered" type="checkbox" id="selected" v-bind:value="burger.name">
+         </div>
+       </div>
+       </div>
+     </div>
+   </section>
+
+
+
+<!-- THE CUSTOMERS INFORMATION -->
+   <section class="info" id="i">
+     <h2>Customer information</h2>
+     <p >Give us your details so we can deliver!</p>
+
+     <p>
+       <label for="name">Full name</label><br>
+       <input v-model = "Name" type="text" id="name" name="fn" required="required" placeholder="First- and Last name">
+
+     </p>
+
+     <p>
+       <label for="email">E-mail</label><br>
+       <input v-model = "Email" type="email" id="email" name="em" required="required" placeholder="E-mail address">
+     </p>
+
+<!--
+     <p>
+       <label for="street">Street</label><br>
+       <input v-model= "Street" type="text" id="street" name="fn" required="required" placeholder="Street name">
+     </p>
+
+     <p>
+       <label for="housenumber">House number</label><br>
+       <input v-model= "House" type="number" id="housenumber" name="fn" required="required" placeholder="House number">
+     </p>
+-->
+
+     <p>
+       <label for="pay">Payment</label><br>
+       <select v-model="payway" id="pay" name="rcp">
+         <option selected>Swish </option>
+         <option>Bankkort</option>
+         <option>Faktura</option>
+         <option>Delbetalning</option>
+       </select>
+     </p>
+
+     <p>
+       <label for="Female">Female</label<br>
+       <input v-model = "Fe" type="radio" id="female" name="gender" value="Female" checked="checked">
+       <label for="Male">Male</label<br>
+       <input v-model= "Ma" type="radio" id="male" name="gender" value="Male">
+
+     </p>
+
+     <h2> Click in the map! </h2>
+     <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
+     <div class="view-box">
+       <div id="dots" v-on:click="displayOrder">
+           <div
+             v-bind:style="{ left: details.x + 'px', top: details.y + 'px'}">
+             T <!-- this displays a key where you click on the map -->
+           </div>
+       </div>
+     </div>
+   </section>
+
+   <div id="order">
+     <button v-on:click = "addOrder()" ><img id= "orderPic" src="https://cdn3.iconfinder.com/data/icons/bbq-grilling-and-tail-gating/50/48-512.png" >Send your order! </button>
+   </div>
+
+   <!-- SUMMARY OF THE ORDER AND PERSONAL INFORMATION -->
+        <div v-if="isOrdered">
+          <h2> Order confirmation </h2>
+          <h3> Customer details </h3>
+          <p> {{Name}} </p>
+          <p> {{Email}} </p>
+          <!--
+          <p> {{Street}} </p>
+          <p> {{House}} </p>
+        -->
+          <p> {{payway}} </p>
+          <p> {{Fe}} </p>
+          <p> {{Ma}} </p>
+
+          <h3> Order summary </h3>
+          {{Ordered.join(", ")}}
+        </div>
+
+</main>
+
+        <hr>
+        <footer>
+          &copy; MayMay's Burgers
+        </footer>
+    </body>
+</html>
+
+<!-- UPPGIFT 4.13
+
+      <div id="myBurgers">
+        <div v-for = "burger in burgers">
+          {{burger.name}}
+          <img v-bind:src="burger.img">
+            {{burger.gluten}}
+            {{burger.lactose}}
+        </div>
+      </div>
+
 
       <section class="burgare" id ="b">
         <h2>Select Burger</h2>
         <p >Choose among our Burgers!</p>
 
-        <div class="wrapper">
-           <div class="box a">
-             <h3> Förrättsburgaren</h3>
-             <img src="https://image.shutterstock.com/image-photo/burgers-on-black-buns-homemade-260nw-1403341763.jpg" width="200">
-             <ul>
-               <li>Sallad</li>
-               <li><span id="allergi">Tomat</li>
-               <li>Skinka</li>
-             </ul>
 
            </div>
 
@@ -54,59 +181,4 @@
          </div>
       </section>
 
-
-      <section class="info" id="i">
-        <h2>Customer information</h2>
-        <p >Give us your details so we can deliver!</p>
-
-        <p>
-          <label for="name">Full name</label><br>
-          <input type="text" id="name" name="fn" required="required" placeholder="First- and Last name">
-        </p>
-
-        <p>
-          <label for="email">E-mail</label><br>
-          <input type="email" id="email" name="em" required="required" placeholder="E-mail address">
-        </p>
-
-        <p>
-          <label for="street">Street</label><br>
-          <input type="text" id="street" name="fn" required="required" placeholder="Street name">
-        </p>
-
-        <p>
-          <label for="housenumber">House number</label><br>
-          <input type="number" id="housenumber" name="fn" required="required" placeholder="House number">
-        </p>
-
-        <p>
-          <label for="pay">Payment</label><br>
-          <select id="pay" name="rcp">
-            <!--If you wish to provide the users with pre-selected values,
-            simply add the selected="selected" attribute to the option
-            element you wish to be pre-selected. -->
-            <option selected>Swish </option>
-            <option>Bankkort</option>
-            <option>Faktura</option>
-            <option>Delbetalning</option>
-          </select>
-        </p>
-
-        <p>
-          <label for="Female">Female</label<br>
-          <input type="radio" id="Female" name="gender" value="Female" checked="checked">
-          <label for="Male">Male</label<br>
-          <input type="radio" id="Male" name="gender" value="Male">
-
-        </p>
-      </section>
-
-      <button type="submit"><img src="https://cdn3.iconfinder.com/data/icons/bbq-grilling-and-tail-gating/50/48-512.png" width="50">Send your order</button>
-
-
-        <hr>
-        <footer>
-          &copy; MayMay's Burgers
-        </footer>
-    </body>
-</html>
+-->

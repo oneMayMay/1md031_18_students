@@ -15,8 +15,10 @@
      border-radius: 5px;
      padding: 20px;
      font-size: 150%;
+     background: #ff5500;
  }
 
+/*
  .a {
       grid-column: 1 / span 1;
       grid-row: 1/ span 3;
@@ -29,6 +31,7 @@
       grid-column: 3 /span 1;
       grid-row: 1 /span 3 ;
   }
+  */
 
 #head {
   margin: 50px;
@@ -40,6 +43,7 @@
   opacity: 0.75;
   width: 100%;
 }
+
 
 h3 {
   font-size: 25px;
@@ -61,11 +65,22 @@ body {
   font-size: 20px;
 }
 
+img {
+  height: 140px;
+}
+
+/* DENNA FUNGERAR INTE */
+#selectButton {
+  font-size: 15px;
+}
+
+/*
 #allergi {
   text-transform: uppercase;
 }
+*/
 
-.burgare {
+.burgerMenu {
   margin: 50px;
   color: #ff5500;
 }
@@ -86,6 +101,10 @@ body {
   padding: 1px 25px;
 }
 
+#orderPic {
+  height: 30px;
+}
+
 /*changes the color of the send-button when you hover over it*/
 button:hover{
   background-color: #ff5500;
@@ -94,4 +113,6 @@ button:hover{
 /*Margin changes bottom/top and left/rught*/
 button {
   margin: 10px 50px;
+  /* width: 100px;
 }
+ */
