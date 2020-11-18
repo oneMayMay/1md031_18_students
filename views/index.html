@@ -36,8 +36,8 @@
          <img v-bind:src="burger.img">
          <ul>
            <li> {{burger.kCal}} kCal </li>
-           <li v-if = "burger.lactose"> Contains lactose </li>
-           <li v-if = "burger.gluten"> Contains gluten </li>
+           <li v-if = "burger.lactose" id="allergy"> Lactose </li>
+           <li v-if = "burger.gluten" id="allergy"> Gluten </li>
          </ul>
          <div>
          <label for="selected" id="selectButton" >Select this burger </label>
@@ -96,12 +96,11 @@
 
      </p>
 
-     <h2> Click in the map! </h2>
-     <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
+     <label> Click in the map to choose the delivery address</label><br>
+     <!-- <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>. -->
      <div class="view-box">
        <div id="dots" v-on:click="displayOrder">
-           <div
-             v-bind:style="{ left: details.x + 'px', top: details.y + 'px'}">
+           <div v-bind:style="{ left: details.x + 'px', top: details.y + 'px'}">
              T <!-- this displays a key where you click on the map -->
            </div>
        </div>
@@ -109,22 +108,22 @@
    </section>
 
    <div id="order">
-     <button v-on:click = "addOrder()" ><img id= "orderPic" src="https://cdn3.iconfinder.com/data/icons/bbq-grilling-and-tail-gating/50/48-512.png" >Send your order! </button>
+     <button v-on:click = "addOrder()"><img id= "orderPic" src="https://cdn3.iconfinder.com/data/icons/bbq-grilling-and-tail-gating/50/48-512.png" >Send my order!</button>
    </div>
 
    <!-- SUMMARY OF THE ORDER AND PERSONAL INFORMATION -->
         <div v-if="isOrdered">
           <h2> Order confirmation </h2>
           <h3> Customer details </h3>
-          <p> {{Name}} </p>
-          <p> {{Email}} </p>
+          <p> Name: {{Name}} </p>
+          <p> Email: {{Email}} </p>
           <!--
           <p> {{Street}} </p>
           <p> {{House}} </p>
         -->
-          <p> {{payway}} </p>
-          <p> {{Fe}} </p>
-          <p> {{Ma}} </p>
+          <p> Payment method: {{payway}} </p>
+          <p> Gender: {{Fe}} {{Ma}}</p>
+          <p> Delivery address: {{details.x}}x / {{details.y}}y
 
           <h3> Order summary </h3>
           {{Ordered.join(", ")}}

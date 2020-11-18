@@ -34,7 +34,7 @@
   */
 
 #head {
-  margin: 50px;
+  margin: 25px;
   height: 200px;
   overflow: hidden;
 }
@@ -42,6 +42,10 @@
 #headpic {
   opacity: 0.75;
   width: 100%;
+}
+
+#allergy {
+  font-weight: bold;
 }
 
 
@@ -81,7 +85,7 @@ img {
 */
 
 .burgerMenu {
-  margin: 50px;
+  margin: 25px;
   color: #ff5500;
 }
 
@@ -93,7 +97,7 @@ img {
 }
 
 .info {
-  margin: 50px;
+  margin: 25px;
 }
 
 #i {
@@ -103,7 +107,9 @@ img {
 
 #orderPic {
   height: 30px;
+  padding: 3px;
 }
+
 
 /*changes the color of the send-button when you hover over it*/
 button:hover{
