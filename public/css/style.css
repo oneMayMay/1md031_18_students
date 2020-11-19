@@ -35,19 +35,29 @@
 
 #head {
   margin: 25px;
-  height: 200px;
+  height: 130px;
   overflow: hidden;
 }
 
 #headpic {
   opacity: 0.75;
-  width: 100%;
+  width: 860px;
 }
 
 #allergy {
   font-weight: bold;
 }
 
+.burgerMenu {
+  margin: 25px;
+  color: #ff5500;
+  width: 810px;
+}
+
+.info {
+  margin: 25px;
+  width: 810px;
+}
 
 h3 {
   font-size: 25px;
@@ -60,8 +70,8 @@ li {
 h1 {
   color: #ff5500;
   position: absolute;
-  margin: 25px;
-  top: 50px;
+  margin: 50px;
+  top: 10px;
 }
 
 body {
@@ -84,11 +94,6 @@ img {
 }
 */
 
-.burgerMenu {
-  margin: 25px;
-  color: #ff5500;
-}
-
 #b {
   background: black;
   border: 2px dashed #ff5500;
@@ -96,9 +101,6 @@ img {
   padding: 1px 25px;
 }
 
-.info {
-  margin: 25px;
-}
 
 #i {
   border: 2px dashed black;
